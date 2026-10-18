@@ -12,6 +12,7 @@ import com.sherif.Accounts.service.IAccountsService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
@@ -28,8 +29,11 @@ public class AccountsServiceImpl implements IAccountsService {
         Optional<Customer> byMobileNumber = customerRepository.findByMobileNumber(customerDto.getMobileNumber());
         if (byMobileNumber.isPresent())
             throw new CustomerAlreadyExistsException("Customer already with given mobile number"+customerDto.getMobileNumber());
+        customer.setCreatedAt(LocalDateTime.now());
+        customer.setCreatedBy("Anonymous");
         Customer customer1=customerRepository.save(customer);
         accountsRepository.save(createNewAccount(customer1));
+
 
     }
     /**
@@ -44,6 +48,8 @@ public class AccountsServiceImpl implements IAccountsService {
         newAccount.setAccountNumber(randomAccNumber);
         newAccount.setAccountType(AccountsConstants.SAVINGS);
         newAccount.setBranchAddress(AccountsConstants.ADDRESS);
+        customer.setCreatedAt(LocalDateTime.now());
+        customer.setCreatedBy("Anonymous");
         return newAccount;
     }
 }
