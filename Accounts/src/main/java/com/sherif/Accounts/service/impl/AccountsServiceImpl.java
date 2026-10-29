@@ -34,7 +34,6 @@ public class AccountsServiceImpl implements IAccountsService {
         Customer customer1=customerRepository.save(customer);
         accountsRepository.save(createNewAccount(customer1));
 
-
     }
     /**
      * @param customer - Customer Object
