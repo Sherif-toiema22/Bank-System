@@ -51,11 +51,11 @@ public class GlobalExceptionHandler  extends ResponseEntityExceptionHandler {
     public ResponseEntity<ErrorResponseDto> handleResourceNotFoundException(ResourceNotFoundException exception,
                                                                             WebRequest webRequest) {
         ErrorResponseDto errorResponseDTO = new ErrorResponseDto(
-                webRequest.getDescription(false),
-                HttpStatus.NOT_FOUND,
-                exception.getMessage(),
-                LocalDateTime.now()
-        );
+                        webRequest.getDescription(false),
+                        HttpStatus.NOT_FOUND,
+                LocalDateTime.now(),
+                exception.getMessage()
+                );
         return new ResponseEntity<>(errorResponseDTO, HttpStatus.NOT_FOUND);
     }
 //
