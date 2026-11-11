@@ -1,10 +1,12 @@
 package com.sherif.Accounts.mapper;
 
 
+
 import com.sherif.Accounts.dto.AccountsDto;
 import com.sherif.Accounts.entity.Accounts;
 
 public class Accountsmapper {
+
     public static AccountsDto mapToAccountsDto(Accounts accounts, AccountsDto accountsDto) {
         accountsDto.setAccountNumber(accounts.getAccountNumber());
         accountsDto.setAccountType(accounts.getAccountType());
@@ -18,4 +20,5 @@ public class Accountsmapper {
         accounts.setBranchAddress(accountsDto.getBranchAddress());
         return accounts;
     }
+
 }
