@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.*;
  */
 
 @Tag(
-        name = "CRUD REST APIs for Loans in EazyBank",
+        name = "CRUD REST APIs for Loans in sherif",
         description = "CRUD REST APIs in EazyBank to CREATE, UPDATE, FETCH AND DELETE loan details"
 )
 @RestController
