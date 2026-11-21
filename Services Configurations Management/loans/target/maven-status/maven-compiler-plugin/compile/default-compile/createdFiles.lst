@@ -1,0 +1,16 @@
+com\sherif\loans\dto\ErrorResponseDto.class
+com\sherif\loans\mapper\LoansMapper.class
+com\sherif\loans\exception\LoanAlreadyExistsException.class
+com\sherif\loans\constants\LoansConstants.class
+com\sherif\loans\exception\ResourceNotFoundException.class
+com\sherif\loans\audit\AuditAwareImpl.class
+com\sherif\loans\controller\LoansController.class
+com\sherif\loans\dto\ResponseDto.class
+com\sherif\loans\entity\BaseEntity.class
+com\sherif\loans\exception\GlobalExceptionHandler.class
+com\sherif\loans\service\ILoansService.class
+com\sherif\loans\dto\LoansDto.class
+com\sherif\loans\LoansApplication.class
+com\sherif\loans\service\impl\LoansServiceImpl.class
+com\sherif\loans\entity\Loans.class
+com\sherif\loans\repository\LoansRepository.class

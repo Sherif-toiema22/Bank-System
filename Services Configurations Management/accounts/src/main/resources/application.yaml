@@ -1,0 +1,38 @@
+#spring.application.name=Accounts
+server:
+  port: 8080
+
+spring:
+  application:
+    name: Accounts
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+logging:
+  pattern:
+    console: ${CONSOLE_LOG_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %cyan(%msg%n)}
+
+
+build:
+  version: "3.0"
+
+accounts:
+    message: "Welcome to Sherif accounts related local APIs "
+    contactDetails:
+      name: "Aly Khalid - Developer"
+      email: "Sherif@gmail.com"
+    onCallSupport:
+      - (555) 555-1234
+      - (555) 523-1345
+
+

@@ -1,0 +1,45 @@
+name: sherif-microservices
+
+services:
+  accounts:
+    image: "sherif/accounts:s4"
+    container_name: accounts-ms
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - sherif
+
+  loans:
+    image: "sherif/loans:s4"
+    container_name: loans-ms
+    restart: unless-stopped
+    ports:
+      - "8090:8090"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - sherif
+
+  cards:
+    image: "sherif/cards:s4"
+    container_name: cards-ms
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          memory: 700m
+    networks:
+      - sherif
+
+networks:
+  sherif:
+    driver: bridge
