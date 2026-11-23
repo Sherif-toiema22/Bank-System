@@ -18,6 +18,9 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  profiles:
+    active:
+      - "qa"
 logging:
   pattern:
     console: ${CONSOLE_LOG_PATTERN:%green(%d{HH:mm:ss.SSS}) %blue(%-5level) %red([%thread]) %yellow(%logger{15}) - %cyan(%msg%n)}
